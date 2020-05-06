@@ -29,7 +29,7 @@ class Stop(models.Model):
 
 class Assistant(models.Model):
 	id = models.AutoField(primary_key=True)
-	trip = models.ForeignKey("Trip", on_delete=models.CASCADE)
+	stop = models.ForeignKey("Stop", on_delete=models.CASCADE)
 	passenger = models.ForeignKey("Passenger", on_delete=models.CASCADE)
 	has_assisted = models.BooleanField(default=False)
 
