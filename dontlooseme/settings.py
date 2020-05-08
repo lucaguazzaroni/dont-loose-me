@@ -25,7 +25,7 @@ SECRET_KEY = 'vc%0y)_+i0ua!%jdwms3_fqy_e%zt(mc)1r)q=$yw8reei30c5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost'. '127.0.0.1', 'https://vast-headland-10651.herokuapp.com/']
 
 
 # Application definition
