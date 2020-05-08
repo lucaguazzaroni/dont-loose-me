@@ -5,17 +5,17 @@ from .models import ( Trip, Passenger, Stop, Assistant )
 class TripSimpleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Trip
-        fields = ['id', 'name']
+        fields = ['id', 'name', 'date']
 
 class PassengerSimpleSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Passenger
 		fields = ['id', 'name', 'trip']
 
-class PassengerSimpleSerializer(serializers.ModelSerializer):
+class StopSimpleSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Stop
-		fields = ['id', 'name', 'trip']
+		fields = ['id', 'trip', 'name', 'date', 'description']
 
 class AssistantSimpleSerializer(serializers.ModelSerializer):
 	class Meta:
