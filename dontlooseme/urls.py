@@ -20,6 +20,6 @@ admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),
-    path("trips/", include('trips.urls')),
+    path('accounts/', include('applications.accounts.urls')),
+    path("trips/", include('applications.trips.urls')),
 ]
