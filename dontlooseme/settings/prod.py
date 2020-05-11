@@ -1,6 +1,7 @@
+from .base import *
 import django_heroku
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
