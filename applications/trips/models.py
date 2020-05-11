@@ -36,7 +36,3 @@ class Assistant(models.Model):
 	passenger = models.ForeignKey("Passenger", on_delete=models.CASCADE)
 	has_assisted = models.BooleanField(default=False)
 
-	def __str__(self):
-		return self.name 
-
-
