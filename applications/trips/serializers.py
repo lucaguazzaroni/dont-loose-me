@@ -18,6 +18,7 @@ class StopSimpleSerializer(serializers.ModelSerializer):
 		fields = ['id', 'trip', 'name', 'date', 'description']
 
 class AssistantSimpleSerializer(serializers.ModelSerializer):
+	passenger = PassengerSimpleSerializer()
 	class Meta:
 		model = Assistant
 		fields = ['id', 'stop', 'passenger', 'has_assisted']
