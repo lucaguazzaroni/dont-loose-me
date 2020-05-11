@@ -71,8 +71,8 @@ def trip_stops_list(request, trip_id):
 @transaction.atomic
 def assistants_managment(request, stop_id):
 	if request.method == 'GET':
-		trip = Trip.objects.get(id=stop_id)
-		assistants = Assistant.objects.filter(trip=trip)
+		stop = Stop.objects.get(id=stop_id)
+		assistants = Assistant.objects.filter(stop=stop)
 		serialized_data = AssistantSimpleSerializer(instance=assistants, many=True).data
 		return JsonResponse(serialized_data, safe=False, status=status.HTTP_200_OK)
 
