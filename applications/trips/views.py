@@ -15,10 +15,7 @@ from. serializers import (
 	AssistantSimpleSerializer  
 )
 
-class PruebaView(TemplateView):
-	template_name = 'trips/hello.html'
-
-#@login_required
+@login_required
 def trip_listing(request):
 	if request.method == 'GET':
 		trips = Trip.objects.all()
@@ -26,7 +23,7 @@ def trip_listing(request):
 		return JsonResponse(serialized_data, safe=False, status=status.HTTP_200_OK)
 
 	
-#@login_required	
+@login_required	
 @transaction.atomic
 def trip_create(request):
 	if request.method == 'POST':
@@ -37,7 +34,7 @@ def trip_create(request):
 		return JsonResponse({}, safe=False, status=status.HTTP_201_CREATED)
 
 
-#@login_required
+@login_required
 @transaction.atomic
 def passengers_managment(request, trip_id):
 	if request.method == 'GET':
@@ -58,7 +55,7 @@ def passengers_managment(request, trip_id):
 		Passenger.objects.bulk_create(passengers_to_create)
 		return JsonResponse({}, safe=False, status=status.HTTP_201_CREATED)
 
-
+@login_required
 def trip_stops_list(request, trip_id):
 	if request.method == 'GET':
 		trip = Trip.objects.get(id=trip_id)
@@ -67,8 +64,7 @@ def trip_stops_list(request, trip_id):
 		return JsonResponse(serialized_data, safe=False, status=status.HTTP_200_OK)
 
 
-#@login_required
-@transaction.atomic
+@login_required
 def assistants_managment(request, stop_id):
 	if request.method == 'GET':
 		stop = Stop.objects.get(id=stop_id)
