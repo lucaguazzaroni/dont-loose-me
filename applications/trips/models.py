@@ -13,6 +13,7 @@ class Trip(models.Model):
 class Passenger(models.Model):
 	id = models.AutoField(primary_key=True)
 	name = models.CharField("Passenger's name", max_length=200)
+	nacional_id = models.CharField("Passenger's nacional id", max_length=10, default="")
 	trip = models.ForeignKey("Trip", on_delete=models.CASCADE)
 
 	def __str__(self):
