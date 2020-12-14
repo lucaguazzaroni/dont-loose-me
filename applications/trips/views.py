@@ -10,6 +10,7 @@ from .models import ( Trip, Passenger, Stop, Assistant )
 
 from. serializers import ( 
 	TripSimpleSerializer, 
+	TripFullSerializer,
 	PassengerSimpleSerializer, 
 	StopSimpleSerializer, 
 	AssistantSimpleSerializer  
@@ -19,7 +20,7 @@ from. serializers import (
 def trip_listing(request):
 	if request.method == 'GET':
 		trips = Trip.objects.all()
-		serialized_data = TripSimpleSerializer(instance=trips, many=True).data
+		serialized_data = TripFullSerializer(instance=trips, many=True).data
 		return JsonResponse(serialized_data, safe=False, status=status.HTTP_200_OK)
 
 	
