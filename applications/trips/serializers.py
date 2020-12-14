@@ -10,9 +10,9 @@ class TripSimpleSerializer(serializers.ModelSerializer):
 class TripFullSerializer(serializers.ModelSerializer):
 	passengers = PassengerSimpleSerializer(many=True)
 	stops = StopFullSerializer(many=True)
-    class Meta:
-        model = Trip
-        fields = ['id', 'name', 'date', 'passengers', 'stops']
+	class Meta:
+		model = Trip
+		fields = ['id', 'name', 'date', 'passengers', 'stops']
 
 class PassengerSimpleSerializer(serializers.ModelSerializer):
 	class Meta:
